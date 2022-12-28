@@ -7,13 +7,13 @@ description: 如何导出 TDengine 中的数据
 
 ## 按表导出 CSV 文件
 
-如果用户需要导出一个表或一个 STable 中的数据，可在 TDengine CLI 中运行：
+如果用户需要导出一个普通表/子表或一个超级表中的数据，可在 TDengine CLI 中运行：
 
 ```sql
 select * from <tb_name> >> data.csv;
 ```
 
-这样，表 tb_name 中的数据就会按照 CSV 格式导出到文件 data.csv 中。
+这样，表 tb_name 中的数据就会按照 CSV 格式导出到文件 data.csv 中。但是需要注意的是，如果导出的是超级表的数据，是没法通过 insert into 的方式导入到超级表中的。也就是说，通过 csv 导出导入的方式只能应用在子表/普通表上。
 
 ## 用 taosdump 导出数据
 
