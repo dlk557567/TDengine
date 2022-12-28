@@ -5714,6 +5714,8 @@ static int32_t buildCreateStreamReq(STranslateContext* pCxt, SCreateStreamStmt* 
     pReq->numOfTags = LIST_LENGTH(pStmt->pTags);
   }
 
+  pReq->createStb = STREAM_CREATE_STABLE_TRUE;
+
   return code;
 }
 
